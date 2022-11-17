@@ -1,3 +1,5 @@
+import random
+
 states = [
 {
     "name": "Alabama",
@@ -150,3 +152,21 @@ states = [
     "name": "Wyoming",
     "capital": "Cheyenne"
 }]
+
+
+def states_quiz():
+    user_score = 0
+    random.shuffle(states)
+    for i in states:
+        user_answer = input(f"What is the capital of {(i['name'])}? \n ")
+        if (user_answer == i["capital"]):
+            user_score += 1
+            print("Correct!\n")
+            print(f"Your current score: {user_score}\n")
+        else:
+            print(f"Sorry, that is incorrect. The capital is {(i['capital'])} \n")
+            print(f"Your current score: {user_score} \n")
+
+    print(f"Your final score is: {user_score}!")
+
+states_quiz()
